@@ -4,6 +4,30 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello, World!");
+        List<Student> students = new List<Student>();
+
+        Student student1 = new Student();
+        students.Add(student1);
+        student1.ID = 1;
+        student1.AddGrade(90);
+        student1.AddGrade(85);
+        
+        Student student2 = new Student { ID = 2 };
+        student2.AddGrade(95, 88);
+        students.Add(student2);
+        
+        Student student3 = new Student { ID = 3 };
+        student3.AddGrade(80, 70, 85);
+        students.Add(student3);
+        
+        Student student4 = new Student { ID = 4 };
+        student4.AddGrade(100, 98);
+        students.Add(student4);
+        
+        foreach (var student in students)
+        {
+            Console.WriteLine($"Student ID: {student.ID}, Average Grade: {student.CalculateAverageGrade():F2}");
+        }
     }
+
 }
