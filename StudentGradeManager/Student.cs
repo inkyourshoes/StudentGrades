@@ -21,6 +21,11 @@ public class Student
     {
         Grades.AddRange(grades);
     }
+    public double CalculateAverageGrade()
+    {
+        return Grades.Count > 0 ? Grades.Average() : 0.0;
+    }
+
 
 
     // Method to calculate the average grade
